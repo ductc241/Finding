@@ -1,0 +1,48 @@
+<div class="registry">
+	<div class="registry_header">
+		<p>Register</p>
+	</div>
+	<div class="container">
+		<div class="grid">
+			<div class="registry_form">
+				<form [formGroup]="registryForm" (ngSubmit)="onSubmit()">
+					<div class="form_group">
+						<label for="">Name</label>
+						<input type="text" placeholder="Yourname@gmail.com" formControlName="name">
+						<div *ngIf="name.invalid && name.dirty">
+							<span *ngIf="name.errors?.required" class="registry_error">Bạn cần phải nhập email</span>
+							<span *ngIf="name.errors?.pattern" class="registry_error">Bạn cần nhập đúng định dạng email</span>
+						</div>
+					</div>
+					<div class="form_group">
+						<label for="">Email</label>
+						<input type="text" placeholder="Email" formControlName="email">
+					</div>
+					<div class="form_group">
+						<label for="">Password (minimum length of 8 letters/numbers)</label>
+						<input type="text" placeholder="Password" formControlName="password">
+					</div>
+					<div class="form_group">
+						<label for="">Password Again</label>
+						<input type="text" placeholder="confirmPassword" formControlName="password">
+					</div>
+					<div class="form_group">
+						<label for="">Phone Number</label>
+						<input type="text" placeholder="Phone" formControlName="phone">
+					</div>
+
+					<button class="button" type="submit">
+						<span>Register</span>
+					</button>
+				</form>
+			</div>
+			<div class="registry_content">
+				<p class="title">Register your pet in the event they go missing / are stolen</p>
+
+				<p>Nobody thinks their pet will go missing, but if they do you want to have as much as possible in place to get your pet back home again.</p>
+
+				<p>By registering your much loved pet, you shorten the process by telling us their details beforehand. If he/she ever goes missing; login and tell us where they went missing and then your pet will be live on the site immediately.</p>
+			</div>
+		</div>
+	</div>
+</div>

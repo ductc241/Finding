@@ -1,0 +1,32 @@
+<div class="login">
+	<div class="container">
+		<div class="login_form">
+			<div style="width: 450px;">
+				<div class="login_header">
+					<div class="login_header-title">
+						Welcome
+					</div>
+					<div class="login_header-content">
+						<p>Please login using the email address and password you entered when signing up.</p>
+					</div>
+				</div>
+
+				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+					<div class="form-group">
+						<input type="text" placeholder="yourname@gmail.com" formControlName="username">
+						<span *ngIf="username.dirty && username.errors?.required" style="color: white">
+							Username is required
+						</span>
+					</div>
+					<div class="form-group">
+						<input type="text" placeholder="password" formControlName="password">
+					</div>
+
+					<button class="button" type="submit">
+						<span>Dang Nhap</span>
+					</button>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

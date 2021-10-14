@@ -1,0 +1,22 @@
+.header{
+	box-shadow: 0px 2px 3px 0px #dad7d7;
+}
+
+.header_logo img{
+	vertical-align: bottom;
+}
+
+.header_main{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header_navbar-link{
+	display: inline-block;
+	padding: 25px 18px;
+}
+
+.header_navbar-link:last-child{
+	padding-right: 0;
+}

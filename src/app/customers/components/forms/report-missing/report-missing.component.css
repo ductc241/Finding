@@ -1,0 +1,31 @@
+.form_section{
+	padding: 50px 0;
+}
+
+.form{
+	margin-top: 40px;
+}
+
+.form_title{
+	font-size: 30px;
+	margin-bottom: 16px;
+	 color: #006156;
+}
+
+.form_label{
+	display: inline-block;
+	font-size: 18px;
+	margin-bottom: 5px;
+}
+
+.form_main{
+	padding: 0 300px
+}
+
+.form_group{
+	margin-bottom: 10px;
+}
+
+.form_detail{
+	margin-bottom: 30px;
+}

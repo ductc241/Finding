@@ -1,0 +1,28 @@
+.detail_lost{
+	padding: 50px 150px;
+	text-align: center;
+	font-size: 20px;
+	background: radial-gradient(circle, #00bcd4, #2196f3);
+}
+
+.detail_lost p{
+	margin-bottom: 10px;
+	color: white;
+}
+
+.detail_img{
+	grid-column: span 4 / span 4;
+	padding: 0 50px
+}
+
+.detail_main{
+	padding: 50px 0;
+}
+
+.detail_infor{
+	grid-column: span 8 / span 8;
+}
+
+.detail_infor p{
+	margin-bottom: 10px;
+}

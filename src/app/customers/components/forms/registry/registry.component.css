@@ -1,0 +1,38 @@
+.registry_header{
+	padding: 60px 0;
+	font-weight: 300;
+	font-size: 70px;
+	text-align: center;
+	color: white;
+	background: radial-gradient(circle, #ffc107, #FF9800);
+}
+
+.registry_form{
+	grid-column: span 6 / span 6;
+	padding: 60px 0;
+	padding-right: 60px
+}
+
+.registry_form .form_group{
+	margin-bottom: 30px;
+}
+
+.registry_form .form_group label{
+	color: gray
+}
+
+.registry_content{
+	grid-column: span 6 / span 6;
+	padding: 60px 0 0 60px;
+}
+
+.registry_content p{
+	margin-bottom: 20px;
+	font-weight: 300;
+}
+
+.registry_error{
+	display: inline-block;
+    margin-top: 5px;
+    color: red;
+}

@@ -1,0 +1,40 @@
+.login{
+	background-image: url('https://d2dtk333f6ycvn.cloudfront.net/static/assets/images/generic/login.jpg');
+}
+.login_form{
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+
+	padding: 150px 0;
+}
+
+.login_header{
+	background-color: #fff;
+	border: 2px solid #F5F5F5;
+	margin-bottom: 25px;
+}
+
+.login_header-title{
+	padding: 15px;
+	background-color: #F5F5F5;
+	font-weight: 600
+}
+.login_header-content{
+	padding: 15px;
+}
+
+.login_title{
+	padding: 
+}
+
+.login_form form input{
+	padding: 16px;
+	background-color: white;
+	border-radius: 3px;
+	border: 1px solid #8080805c;
+}
+
+.form-group{
+	margin-bottom: 25px;
+}
