@@ -15,14 +15,21 @@ export class RegistryComponent implements OnInit {
   	}
 
   	registryForm = new FormGroup({
-  	 	name: new FormControl('', [
-  	 		Validators.required,
-  	 		Validators.pattern('^[a-z][a-z0-9\]{5,32}@[a-z0-9]{2,}(\.[a-z0-9]{2,4}){1,2}$')
-  	 	]),
-    	email: new FormControl(),
-    	password: new FormControl(),
-    	confirmPassword: new FormControl(),
-    	phone: new FormControl()
+  	 	name: new FormControl(),
+    	email: new FormControl('', [
+			Validators.required,
+			// Validators.email
+		]),
+    	password: new FormControl('', [
+			Validators.required
+		]),
+    	confirmPassword: new FormControl('', [
+			Validators.required,
+			Validators.email
+		]),
+    	phone: new FormControl('', [
+			Validators.required
+		])
   	})
 
   	onSubmit() {

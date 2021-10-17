@@ -9,7 +9,7 @@ import { PetService } from 'src/app/services/pet.service';
   styleUrls: ['./report-missing.component.css']
 })
 export class ReportMissingComponent implements OnInit {
-	public image:String = ''
+	public image: String 
   	constructor(
 		private petService:PetService
 	) { }
@@ -34,8 +34,8 @@ export class ReportMissingComponent implements OnInit {
   	onSubmit() {
   		this.petService.postReport({
 			...this.reportForm.value,
-			// image: this.image
-		}).subscribe(data => console.log(data))
+			image: this.image
+		})
   	}
 
 	getImage($event: any){

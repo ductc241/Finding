@@ -29,7 +29,7 @@ import { RegistryComponent } from './components/forms/registry/registry.componen
   imports: [
     CommonModule,
     CustomersRoutingModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CustomersModule { }

@@ -10,35 +10,30 @@ import { environment } from '../../environments/environment'
   providedIn: 'root'
 })
 export class PetService {
-	imgLink: String = ''
+	downloadURL: Observable<string>
   	constructor(
 		private http: HttpClient,
 		private storage: AngularFireStorage
   	) { }
 
   	postReport(reportData: any){
-		// const file = reportData.image		
-		// var n = Date.now();
-		// const filePath = `pet/${n}`;
-		// const fileRef = this.storage.ref(filePath);
-
-		// const task = this.storage.upload(`pet/${n}`, file);
-
-		// task.snapshotChanges().pipe(finalize(() => {
-		// 	fileRef.getDownloadURL().subscribe(url => {
-		// 		if(url){
-		// 			const data = {
-		// 				...reportData,
-		// 				image: url
-		// 			}
-		// 			this.http.get<any>(`${environment.apiUrl}/pet`).subscribe(data => {
-		// 				console.log(data)
-		// 			})
-		// 			console.log(url)
-		// 		}
-		// 	})
-		// }))
-		return this.http.post<any>(`${environment.apiUrl}/pet`, reportData)
+		const file =  reportData.image
+    	const filePath = `${Date.now()}`
+    	const ref = this.storage.ref(filePath)
+    	const task = ref.put(file)
+		
+		task.snapshotChanges().pipe(
+			finalize(() => {
+				ref.getDownloadURL().subscribe(url => {
+					console.log(url)
+					this.http.post<any>(`${environment.apiUrl}/pet`, {
+						...reportData,
+						image: url
+					}).subscribe(data => console.log(data));
+				})
+			})
+		 )
+		.subscribe()
   	}
 
 

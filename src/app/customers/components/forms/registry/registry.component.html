@@ -8,15 +8,20 @@
 				<form [formGroup]="registryForm" (ngSubmit)="onSubmit()">
 					<div class="form_group">
 						<label for="">Name</label>
-						<input type="text" placeholder="Yourname@gmail.com" formControlName="name">
+						<input type="text" placeholder="Name" formControlName="name">
 						<div *ngIf="name.invalid && name.dirty">
 							<span *ngIf="name.errors?.required" class="registry_error">Bạn cần phải nhập email</span>
-							<span *ngIf="name.errors?.pattern" class="registry_error">Bạn cần nhập đúng định dạng email</span>
+							<!-- <span *ngIf="name.errors?.pattern" class="registry_error">Bạn cần nhập đúng định dạng email</span> -->
+							<span *ngIf="name.errors?.email" class="registry_error">Bạn cần nhập đúng định dạng email</span>
 						</div>
 					</div>
 					<div class="form_group">
 						<label for="">Email</label>
-						<input type="text" placeholder="Email" formControlName="email">
+						<input type="text" placeholder="Yourname@gmail.com" formControlName="email">
+						<div *ngIf="name.invalid && name.dirty">
+							<span *ngIf="name.errors?.required" class="registry_error">Bạn cần phải nhập email</span>
+							<span *ngIf="name.errors?.email" class="registry_error">Bạn cần nhập đúng định dạng email</span>
+						</div>
 					</div>
 					<div class="form_group">
 						<label for="">Password (minimum length of 8 letters/numbers)</label>
@@ -24,7 +29,7 @@
 					</div>
 					<div class="form_group">
 						<label for="">Password Again</label>
-						<input type="text" placeholder="confirmPassword" formControlName="password">
+						<input type="text" placeholder="Confirm Password" formControlName="password">
 					</div>
 					<div class="form_group">
 						<label for="">Phone Number</label>

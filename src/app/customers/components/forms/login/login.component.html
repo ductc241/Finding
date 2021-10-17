@@ -14,15 +14,19 @@
 				<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
 					<div class="form-group">
 						<input type="text" placeholder="yourname@gmail.com" formControlName="username">
-						<span *ngIf="username.dirty && username.errors?.required" style="color: white">
-							Username is required
-						</span>
+						<div *ngIf="username.invalid && username.dirty">
+							<span *ngIf="username.errors?.required" class="registry_error">Bạn cần phải nhập email</span>
+							<span *ngIf="username.errors?.pattern" class="registry_error">Bạn cần nhập đúng định dạng email</span>
+						</div>
 					</div>
 					<div class="form-group">
 						<input type="text" placeholder="password" formControlName="password">
+						<div *ngIf="password.invalid && password.dirty">
+							<span *ngIf="password.errors?.required" class="registry_error">Nhập mật khẩu của bạn</span>
+						</div>
 					</div>
 
-					<button class="button" type="submit">
+					<button class="button" type="submit" [disabled]="!loginForm.valid">
 						<span>Dang Nhap</span>
 					</button>
 				</form>
