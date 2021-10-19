@@ -7,9 +7,12 @@
 	margin-right: 60px;
 }
 
+.gallery_container{
+	grid-column: span 9 / span 9;
+}
 
 .gallery_images{
-	grid-column: span 9 / span 9;
+	width: 100%;
 	column-count: 3;
 }
 

@@ -11,6 +11,8 @@ import { environment } from '../../environments/environment'
 })
 export class PetService {
 	downloadURL: Observable<string>
+	uploadPercent: Observable<number | undefined>
+
   	constructor(
 		private http: HttpClient,
 		private storage: AngularFireStorage

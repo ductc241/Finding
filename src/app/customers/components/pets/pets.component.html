@@ -5,11 +5,11 @@
 				<div class="filter_item">
 					<p class="filter_title">Chủng Loại</p>
 					<ul>
-						<li>Dog</li>
-						<li>Cat</li>
-						<li>Rabbit</li>
-						<li>Bird</li>
-						<li>Horse</li>
+						<li value="Dog">Dog</li>
+						<li value="Cat">Cat</li>
+						<li value="Rabbit">Rabbit</li>
+						<li value="Bird">Bird</li>
+						<li value="Horse">Horse</li>
 					</ul>
 				</div>
 
@@ -41,52 +41,26 @@
 				</div>
 			</div>
 
-			<div class="gallery_images">
-				<div class="gallery_item">
-					<a href="../pet/1">
-						<img src="assets/cat.jpg" alt="">
-					</a>
-					<div class="gallery_item-detail">
-						<p style="font-weight: bold;">Missing since Sept. 29, 2021</p>
-						<p>Harringay Ladder, London Borough of Haringey, London, City of London, Greater London, England, N8 0AB, United Kingdom</p>
-						<p>Color: brown - ginger - white</p>
+			
+
+			<div class="gallery_container">
+				<p style="text-align: center;" *ngIf="!this.totalLength">Không có tin nào hiện tại</p>
+				<div class="gallery_images" *ngFor="let item of filterData | paginate: { itemsPerPage: 1, currentPage: page, totalItems: totalLength }">
+					<div class="gallery_item">
+						<a href="../pet/1">
+							<img src={{item.image}} alt="">
+						</a>
+						<div class="gallery_item-detail">
+							<p style="font-weight: bold;">Missing since {{item.date}}</p>
+							<p>{{item.describe}}</p>
+						</div>
 					</div>
+				</div>
+				<div style="margin-top: 16px;">
+					<pagination-controls (pageChange)="page = $event" *ngIf="this.totalLength"></pagination-controls>
 				</div>
 
-				<div class="gallery_item">
-					<img src="assets/dog.jpg" alt="">
-					<div class="gallery_item-detail">
-						<p style="font-weight: bold;">Missing since Sept. 29, 2021</p>
-						<p>Harringay Ladder, London Borough of Haringey, London, City of London, Greater London, England, N8 0AB, United Kingdom</p>
-						<p>Color: brown - ginger - white</p>
-					</div>
-				</div>
 
-				<div class="gallery_item">
-					<img src="assets/cat1.jpg" alt="">
-					<div class="gallery_item-detail">
-						<p style="font-weight: bold;">Missing since Sept. 29, 2021</p>
-						<p>Harringay Ladder, London Borough of Haringey, London, City of London, Greater London, England, N8 0AB, United Kingdom</p>
-						<p>Color: brown - ginger - white</p>
-					</div>
-				</div>
-
-				<div class="gallery_item">
-					<img src="assets/cat.jpg" alt="">
-					<div class="gallery_item-detail">
-						<p style="font-weight: bold;">Missing since Sept. 29, 2021</p>
-						<p>Harringay Ladder, London Borough of Haringey, London, City of London, Greater London, England, N8 0AB, United Kingdom</p>
-						<p>Color: brown - ginger - white</p>
-					</div>
-				</div>
-				<div class="gallery_item">
-					<img src="assets/dog.jpg" alt="">
-					<div class="gallery_item-detail">
-						<p style="font-weight: bold;">Missing since Sept. 29, 2021</p>
-						<p>Harringay Ladder, London Borough of Haringey, London, City of London, Greater London, England, N8 0AB, United Kingdom</p>
-						<p>Color: brown - ginger - white</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+import { NgxPaginationModule } from 'ngx-pagination'
 
 import { CustomersRoutingModule } from './customers-routing.module';
 import { CustomersComponent } from './customers.component';
@@ -12,6 +13,7 @@ import { PetsComponent } from './components/pets/pets.component';
 import { PetComponent } from './components/pet/pet.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RegistryComponent } from './components/forms/registry/registry.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 @NgModule({
@@ -25,11 +27,13 @@ import { RegistryComponent } from './components/forms/registry/registry.componen
     PetComponent,
     FooterComponent,
     RegistryComponent,
+    DashboardComponent,
   ],
   imports: [
     CommonModule,
     CustomersRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPaginationModule
   ]
 })
 export class CustomersModule { }

@@ -8,6 +8,7 @@ import { PetComponent } from './components/pet/pet.component';
 import { ReportMissingComponent } from './components/forms/report-missing/report-missing.component';
 import { LoginComponent } from './components/forms/login/login.component';
 import { RegistryComponent } from './components/forms/registry/registry.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
@@ -38,6 +39,11 @@ const routes: Routes = [
 			{
 				path: 'registry',
 				component: RegistryComponent
+			},
+			{
+				
+				path: 'user/dashboard',
+				component: DashboardComponent
 			}
 		]
 	}
