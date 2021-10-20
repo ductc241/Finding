@@ -1,4 +1,6 @@
 export interface Pet {
+    _id: String,
+    image: String,
     type: String,
     date: String,
     name: String,

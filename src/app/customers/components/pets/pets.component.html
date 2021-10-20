@@ -4,12 +4,11 @@
 			<div class="gallery_filter">
 				<div class="filter_item">
 					<p class="filter_title">Chủng Loại</p>
-					<ul>
-						<li value="Dog">Dog</li>
-						<li value="Cat">Cat</li>
-						<li value="Rabbit">Rabbit</li>
-						<li value="Bird">Bird</li>
-						<li value="Horse">Horse</li>
+					<ul class="filter_list" *ngFor="let type of category.types">
+						<label>
+							<input type="checkbox" value="{{ type }}" data-filter="type" (click)="filterPets($event)">
+							<span>{{ type }}</span>
+						</label>
 					</ul>
 				</div>
 
@@ -23,12 +22,11 @@
 
 				<div class="filter_item">
 					<p class="filter_title">Màu Sắc</p>
-					<ul>
-						<li>Black</li>
-						<li>White</li>
-						<li>Brown</li>
-						<li>ginger</li>
-						<li>Horse</li>
+					<ul *ngFor="let color of category.colors">
+						<label>
+							<input type="checkbox" value="{{ color }}" (click)="filterPets($event)">
+							<span style="margin-left: 10px;">{{ color }}</span>
+						</label>
 					</ul>
 				</div>
 
@@ -44,7 +42,7 @@
 			
 
 			<div class="gallery_container">
-				<p style="text-align: center;" *ngIf="!this.totalLength">Không có tin nào hiện tại</p>
+				<p style="text-align: center;" *ngIf="!this.totalLength">Không có tin nào để hiện tại</p>
 				<div class="gallery_images" *ngFor="let item of filterData | paginate: { itemsPerPage: 1, currentPage: page, totalItems: totalLength }">
 					<div class="gallery_item">
 						<a href="../pet/1">

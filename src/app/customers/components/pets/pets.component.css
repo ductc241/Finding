@@ -60,3 +60,11 @@
 .filter_item{
 	margin-bottom: 20px;
 }
+
+.filter_list label{
+	display: block;
+}
+
+.filter_list label span{
+	margin-left: 10px;
+}

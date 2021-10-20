@@ -42,4 +42,8 @@ export class PetService {
 	showPet(): Observable<any>{
     	return this.http.get<any>(`${environment.apiUrl}/pet`);
   	}
+
+  	deletePet(id: String): Observable<any>{
+    	return this.http.delete<any>(`${environment.apiUrl}/pet/${id}`);
+  	}
 }

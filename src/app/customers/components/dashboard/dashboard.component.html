@@ -34,47 +34,33 @@
                 <div class="card">
                     <p class="card_title">My Posts</p>
                     <table class="dashboard_table">
-                          <tr>
+                        <tr>
                             <th class="table_name">Name</th>
                             <th class="table_image">Image</th>
                             <th class="table_area">Area Lost</th>
                             <th class="table_area">Action</th>
-                          </tr>
-                          <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>
-                                <img src="https://firebasestorage.googleapis.com/v0/b/upload-image-ebfc7.appspot.com/o/1634563032904?alt=media&token=57e33a22-2f82-408e-9e63-cb55f5f859f0" alt="">
-                            </td>
-                            <td> London, Greenwich, SE9 2AN, England</td>
-                            <td>
-                                <button class="button">
-                                    <span>Delete</span>
-                                </button>
-
-                                <button class="button">
-                                    <span>Edit</span>
-                                </button>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>Alfreds Futterkiste</td>
-                            <td>
-                                <img src="https://firebasestorage.googleapis.com/v0/b/upload-image-ebfc7.appspot.com/o/1634563032904?alt=media&token=57e33a22-2f82-408e-9e63-cb55f5f859f0" alt="">
-                            </td>
-                            <td> London, Greenwich, SE9 2AN, England</td>
-                            <td>
-                                <button class="button">
-                                    <span>Delete</span>
-                                </button>
-
-                                <button class="button">
-                                    <span>Edit</span>
-                                </button>
-                            </td>
-                          </tr>
+                        </tr>
+                        <tbody *ngFor="let pet of data">
+                            <tr>
+                                <td>{{ pet.name }}</td>
+                                <td>
+                                    <img src="{{ pet.image }}" alt="">
+                                </td>
+                                <td>{{ pet.area }}</td>
+                                <td>
+                                    <button class="button" (click)="onDelete(pet._id)">
+                                        <span>Delete</span>
+                                    </button>
+                                </td>
+                            </tr>      
+                        </tbody>
+                        <tr *ngIf="this.totalPet === 0">
+                            <p>Bạn chưa đăng tin nào</p>
+                        </tr>
                     </table>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
