@@ -24,8 +24,11 @@
 					<li class="header_navbar-link">
 						<a routerLink="registry">Register</a>
 					</li>
-					<li class="header_navbar-link">
+					<li class="header_navbar-link" *ngIf="!isLogin">
 						<a routerLink="login">Login</a>
+					</li>
+					<li class="header_navbar-link" *ngIf="isLogin">
+						<a routerLink="user/dashboard">Dashboard</a>
 					</li>
 				</ul>
 			</div>

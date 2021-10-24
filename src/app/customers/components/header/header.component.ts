@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+	isLogin = false
 
-  ngOnInit(): void {
-  }
+  	constructor() { }
+
+  	ngOnInit(): void {
+  		const token = JSON.parse(localStorage.getItem('token')!)
+
+  		if(token){
+  			this.isLogin = true
+  		}else{
+  			this.isLogin = false
+  		}
+  	}
 
 }

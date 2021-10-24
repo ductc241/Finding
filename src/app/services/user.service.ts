@@ -15,7 +15,7 @@ export class UserService {
     	return this.http.get<any>(`${environment.apiUrl}/account/signin`);
   	}
 	
-	getUserByEmail(email: String): Observable<any>{
-		return this.http.get<any>(`${environment.apiUrl}/user?email=${email}`);
+	getUserByEmail(username: String): Observable<any>{
+		return this.http.get<any>(`${environment.apiUrl}/user?username=${username}`);
 	}
 }

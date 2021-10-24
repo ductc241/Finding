@@ -15,4 +15,8 @@ export class AuthService {
   	login(loginData: any): Observable<any>{
     	return this.http.post<any>(`${environment.apiUrl}/account/signin`, loginData);
   	}
+
+  	register(registerData: any): Observable<any>{
+    	return this.http.post<any>(`${environment.apiUrl}/account/signup`, registerData);
+  	}
 }

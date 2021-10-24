@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+
 import { PetService } from 'src/app/services/pet.service';
 import { Pet } from 'src/app/models/pet';
 
@@ -12,7 +14,8 @@ export class DashboardComponent implements OnInit {
     data: Pet[]
     totalPet: number
   	constructor(
-      private petService: PetService
+      private petService: PetService,
+      private router: Router
     ) { }
 
   	ngOnInit(): void {
@@ -33,7 +36,11 @@ export class DashboardComponent implements OnInit {
           console.log(data)
         })
       }
-     
+    }
+
+    onLogout(){
+      localStorage.removeItem('token')
+      this.router.navigate(['login'])
     }
 
 }

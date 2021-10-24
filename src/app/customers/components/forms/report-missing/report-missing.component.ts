@@ -33,9 +33,9 @@ export class ReportMissingComponent implements OnInit {
 
   	onSubmit() {
   		this.petService.postReport({
-			...this.reportForm.value,
-			image: this.image
-		})
+  			...this.reportForm.value,
+  			image: this.image
+  		})
   	}
 
 	getImage($event: any){

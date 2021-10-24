@@ -9,34 +9,32 @@
 					<div class="form_group">
 						<label for="">Name</label>
 						<input type="text" placeholder="Name" formControlName="name">
-						<div *ngIf="name.invalid && name.dirty">
-							<span *ngIf="name.errors?.required" class="registry_error">Bạn cần phải nhập email</span>
-							<!-- <span *ngIf="name.errors?.pattern" class="registry_error">Bạn cần nhập đúng định dạng email</span> -->
-							<span *ngIf="name.errors?.email" class="registry_error">Bạn cần nhập đúng định dạng email</span>
-						</div>
 					</div>
 					<div class="form_group">
 						<label for="">Email</label>
-						<input type="text" placeholder="Yourname@gmail.com" formControlName="email">
-						<div *ngIf="name.invalid && name.dirty">
-							<span *ngIf="name.errors?.required" class="registry_error">Bạn cần phải nhập email</span>
-							<span *ngIf="name.errors?.email" class="registry_error">Bạn cần nhập đúng định dạng email</span>
+						<input type="text" placeholder="Yourname@gmail.com" formControlName="username">
+						<div *ngIf="username.invalid && username.dirty">
+							<span *ngIf="username.errors?.required" class="registry_error">Trường này là bắt buộc</span>
+							<span *ngIf="username.errors?.pattern" class="registry_error">Nhập đúng định dạng email</span>
+							<span *ngIf="username.errors?.uniqueEmail" class="registry_error">Email đã tồn tại</span>
 						</div>
 					</div>
 					<div class="form_group">
-						<label for="">Password (minimum length of 8 letters/numbers)</label>
+						<label for="">Password</label>
 						<input type="text" placeholder="Password" formControlName="password">
 					</div>
 					<div class="form_group">
 						<label for="">Password Again</label>
-						<input type="text" placeholder="Confirm Password" formControlName="password">
+						<input type="text" placeholder="Password" formControlName="confirm">
+						<div *ngIf="confirm.invalid && confirm.dirty">
+							<span *ngIf="confirm.errors?.mustMatch" class="registry_error">Kiểm tra lại mật khẩu của bạn</span>
+						</div>
 					</div>
 					<div class="form_group">
 						<label for="">Phone Number</label>
 						<input type="text" placeholder="Phone" formControlName="phone">
 					</div>
-
-					<button class="button" type="submit">
+					<button class="button" type="submit" [disabled]="!registryForm.valid">
 						<span>Register</span>
 					</button>
 				</form>

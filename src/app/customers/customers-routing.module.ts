@@ -10,6 +10,8 @@ import { LoginComponent } from './components/forms/login/login.component';
 import { RegistryComponent } from './components/forms/registry/registry.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 
+import { AuthGuard } from './services/guard/auth.guard'
+
 
 const routes: Routes = [
 	{
@@ -41,9 +43,9 @@ const routes: Routes = [
 				component: RegistryComponent
 			},
 			{
-				
 				path: 'user/dashboard',
-				component: DashboardComponent
+				component: DashboardComponent,
+				canActivate: [AuthGuard]
 			}
 		]
 	}
